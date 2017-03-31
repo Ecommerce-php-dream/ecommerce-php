@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 31 Mars 2017 à 12:27
+-- Généré le :  Ven 31 Mars 2017 à 14:35
 -- Version du serveur :  10.1.19-MariaDB
 -- Version de PHP :  5.6.28
 
@@ -35,6 +35,13 @@ CREATE TABLE `product` (
   `quantity` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Contenu de la table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `quantity`) VALUES
+(1, 'test', 'ceci est un test ', 'http://wallpapercave.com/wp/n0FcaBH.jpg', '777.00', '19 ticket');
+
 -- --------------------------------------------------------
 
 --
@@ -64,7 +71,9 @@ ALTER TABLE `product`
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `login` (`login`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -74,7 +83,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `user`
 --
