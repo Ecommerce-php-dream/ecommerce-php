@@ -1,9 +1,7 @@
 <?php include_once '../common/header.php'; ?>
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
@@ -12,14 +10,13 @@
                     <a href="#" class="list-group-item">Category 3</a>
                 </div>
             </div>
-
             <div class="col-md-9">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/800x300" alt="">
                     <div class="caption-full">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
+                        <h4 class="pull-right">$ <?php ?></h4>
+                        <h4><a href="productsList.php">TITRE de notre article</a>
                         </h4>
                         <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                         <p>Want to make these reviews work? Check out
