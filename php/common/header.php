@@ -11,10 +11,10 @@
       <title>Page d'accueil Ecommerce</title>
 
       <!-- Bootstrap Core CSS -->
-      <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+      <link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
       <!-- Custom CSS -->
-      <link href="../../resources/css/shop-homepage.css" rel="stylesheet">
+      <link href="resources/css/shop-homepage.css" rel="stylesheet">
 
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +45,7 @@
                         <a href="#">Connexion</a>
                     </li>
                     <li>
-                        <a href="#">Inscription</a>
+                        <a href="signup.php">Inscription</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
