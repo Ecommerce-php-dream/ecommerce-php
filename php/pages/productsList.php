@@ -1,4 +1,6 @@
-<!-- Page Content -->
+<?php
+
+?>
 <div class="container">
 
     <!-- Page Header -->
@@ -14,12 +16,11 @@
     <!-- Projects Row -->
     <div class="row">
         <div class="col-md-4 portfolio-item">
-            <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
-            <h3><a href="#">Nom du projet en php</a></h3>
-            <p>PIOCHER DANS LA BASE DE DONN2ES</p>
-
-        </div>
-        <div class="col-md-4 portfolio-item">
+              <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
+              <h3><a href="#">Nom du projet en php</a></h3>
+              <p>PIOCHER DANS LA BASE DE DONN2ES</p>
+          </div>
+          <div class="col-md-4 portfolio-item">
             <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
             <h3><a href="#">Nom du projet en php</a></h3>
             <p>PIOCHER DANS LA BASE DE DONN2ES</p>

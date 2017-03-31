@@ -1,25 +1,25 @@
 <?php
 
-// include_once '../common/header.php';
-//
-// $login = null;
-// $email = null;
-// $password = null;
-//
-// // Vérifie l'envoi du formulaire en POST
-// if (!empty($_POST)) {
-//
-//   // Récupère les données de $_POST
-//   $login = $_POST['login'];
-//   $email = $_POST['email'];
-//   $password = $_POST['password'];
-// }
-//
-// // Création du tableau d'erreur
-// $error = [];
-//
-//
-//
+$login = null;
+$email = null;
+$password = null;
+
+// Vérifie l'envoi du formulaire en POST
+if (!empty($_POST)) {
+
+  // Récupère les données de $_POST
+  $login = $_POST['login'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+}
+
+var_dump($_POST);
+
+// Création du tableau d'erreur
+$error = [];
+
+
+
 
 
 ?>
@@ -41,7 +41,7 @@
 
         <div class="form-group">
           <label for="password">Votre mot de passe :</label>
-          <input id="password" name="password" type="text" class="form-control" placeholder="Mot de passe">
+          <input id="password" name="password" type="password" class="form-control" placeholder="Mot de passe">
         </div>
 
         <button class="btn btn-primary center-block" type="submit" name="button">S'inscrire</button>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,13 +29,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Connexion</a>
+                        <a href="?page=11">Connexion</a>
                     </li>
                     <li>
-                        <a href="signup.php">Inscription</a>
+                        <a href="?page=10">Inscription</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="?page=2">Contact</a>
                     </li>
                 </ul>
             </div>
