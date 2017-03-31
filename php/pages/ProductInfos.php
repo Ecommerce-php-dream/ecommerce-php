@@ -1,9 +1,43 @@
+<<<<<<< HEAD
 <?php include_once '../common/header.php'; ?>
+=======
+<?php include_once'common/header.php'; ?>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+>>>>>>> debut modifi page
     <!-- Page Content -->
     <div class="container">
-
         <div class="row">
-
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
@@ -12,14 +46,13 @@
                     <a href="#" class="list-group-item">Category 3</a>
                 </div>
             </div>
-
             <div class="col-md-9">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://placehold.it/800x300" alt="">
                     <div class="caption-full">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
+                        <h4 class="pull-right">$ <?php ?></h4>
+                        <h4><a href="productsList.php">TITRE de notre article</a>
                         </h4>
                         <p>See more snippets like these online store reviews at <a target="_blank" href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                         <p>Want to make these reviews work? Check out

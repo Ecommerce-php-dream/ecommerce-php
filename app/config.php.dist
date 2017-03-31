@@ -1,0 +1,8 @@
+<?php
+
+  $host = 'PUTHOSTNAME';
+  $bdd = 'PUTDBNAME';
+  $user = 'PUTUSER';
+  $password = 'PUTPASSWORD';
+
+  $db = new PDO('mysql:hostname='.$host.';dbname='.$bdd, $user, $password);
