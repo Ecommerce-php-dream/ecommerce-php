@@ -18,6 +18,9 @@ include_once 'app/pages.php';
 // Inclure le fichier de fonctions pour les users
 include_once 'php/model/users.php';
 
+// Inclure le fichier de fonctions pour les produits
+include_once 'php/model/products.php';
+
 
 //Connexion à la base de données
 try {
