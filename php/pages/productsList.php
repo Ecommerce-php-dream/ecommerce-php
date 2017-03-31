@@ -1,4 +1,3 @@
-<?php include_once '../common/header.php'; ?>
 <!-- Page Content -->
 <div class="container">
 
@@ -139,4 +138,3 @@
         </div>
     </div>
     <!-- /.row -->
-<?php include_once '../common/footer.php'; ?>
