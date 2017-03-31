@@ -26,4 +26,39 @@ function setUser($login, $email, $password, $role, $registered_at)
   return $bdd->lastInsertId();
 }
 
+function getUserBylogin($login) {
+
+   // On définit $bdd comme etant une variable globale
+   global $bdd;
+
+   // Préparation de la requete
+   $query = $bdd->prepare("SELECT id, login, email, password FROM user WHERE login=:loginUser");
+
+   $query->bindValue(":loginUser", $login, PDO::PARAM_STR);
+   $query->execute();
+
+   $result = $query->fetch(PDO::FETCH_OBJ);
+   $query->closeCursor();
+
+   return $result;
+}
+
+
+function getUser($id) {
+
+    // On définit $bdd comme etant une variable globale
+    global $bdd;
+
+    // Préparation de la requete
+    $query = $bdd->prepare("SELECT id, login, email, password FROM user WHERE id=:idUser");
+
+    $query->bindValue(":idUser", $id, PDO::PARAM_INT);
+    $query->execute();
+
+    $result = $query->fetch(PDO::FETCH_OBJ);
+    $query->closeCursor();
+
+    return $result;
+}
+
 ?>

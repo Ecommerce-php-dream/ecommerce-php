@@ -40,16 +40,22 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Connexion</a>
-                    </li>
-                    <li>
-                        <a href="?page=10">Inscription</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+                  <?php if (isLogged()): ?>
+                  <li>Bonjour <?php echo $_SESSION['user']['login'];?> </li>
+                  <?php else: ?>
+                   <li><a href="#">Connexion</a></li>
+                   </li>
+                   <li>
+                       <a href="?page=10">Inscription</a>
+                   </li>
+                   <li>
+                       <a href="#">Contact</a>
+                   </li>
+                <?php endif; ?>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
