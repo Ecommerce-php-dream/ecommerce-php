@@ -5,4 +5,4 @@
   $user = 'PUTUSER';
   $password = 'PUTPASSWORD';
 
-  $db = new PDO('mysql:hostname='.$host.';dbname='.$bdd, $user, $password);
+  $db = new PDO('mysql:hostname='.$host.';dbname='.$database, $user, $pass);

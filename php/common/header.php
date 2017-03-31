@@ -45,7 +45,7 @@
                         <a href="#">Connexion</a>
                     </li>
                     <li>
-                        <a href="signup.php">Inscription</a>
+                        <a href="?page=10">Inscription</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
