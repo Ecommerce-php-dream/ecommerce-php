@@ -1,6 +1,58 @@
 <?php
-    
+
+// On récupére le numéro de la page depuis l'url
+// Si le paramètre "pageNum" n'existe pas, on définit que la page vaut 1
+$pageNum = isset($_GET['pageNum']) ? $_GET['pageNum'] : 1;
+
+// On définit les nombre d'articles par page
+$nbreArticleParPage = 6;
+
+// On recale le numéro de la page courante
+// Si le visiteur voit la page 1, le programme doit voir la page 0
+$pageNumero = $pageNum-1;
+
+// On définit la ligne de départ du nombre de résultats que MySQL doit retourné
+$start = $pageNumero * $nbreArticleParPage;
+
+// On effectue la requête de comptage du nombre total d'article dans la BDD
+$countQuery = $bdd->query("SELECT COUNT(*) FROM product");
+$countArticles = $countQuery->fetchColumn();
+
+// On calcule le nombre de pages total ($countArticles / $nbreArticleParPage)
+// On utilise la fonction "ceil" pour obtenir l'entier supérieur, au cas ou la
+// division retourne un décimal
+$nbrePages = ceil($countArticles / $nbreArticleParPage);
+
+// On définit le numéro de la page précédente
+$pagePrev = $pageNum-1;
+
+// On définit le numéro de la page suivante
+$pageNext = $pageNum+1;
+
+
+// Si l'utilisateur force l'affiche d'une page dont le numéro est inférieur
+// à 1, on le redirige vers la permiere page
+if ($pageNum < 1) {
+    header("location: ?page=20&pageNum=1");
+    exit;
+}
+
+// Si l'utilisateur force l'affiche d'une page dont le numéro est supérieur
+// au nombre de page total, on le redirige vers la derniere page
+if ($pageNum > $nbrePages) {
+    header("location: ?page=20&pageNum=".$nbrePages);
+    exit;
+}
+
+// Requete de sélection des articles concerneés par la page courante
+// La requete retourne les articles 10 a 15 si le numero de la page est 3
+$query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+
+
 ?>
+
+<!-- Page Content -->
 <div class="container">
 
     <!-- Page Header -->
@@ -15,121 +67,67 @@
 
     <!-- Projects Row -->
     <div class="row">
-      <?php foreach (getProduct() as $product): ?>
+      <?php foreach ($results as $key => $value): ?>
         <div class="col-md-4 portfolio-item">
             <a href="#">
-                <img class="img-responsive" src="<?php echo $product['image']; ?>" alt="">
+                <img class="img-responsive" src="<?php echo $value->image; ?>" alt="">
             </a>
             <h3>
-                <a href="?page=21&uid=<?php echo  $product['id']; ?>"><?php echo $product['name']; ?> </a>
+                <a href="#"><?php echo $value->name; ?></a>
             </h3>
-            <p><?php echo $product['description']; ?></p>
+            <p><?php echo $value->description; ?></p>
         </div>
       <?php endforeach; ?>
 
-            <div class="col-md-4 portfolio-item">
-              <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
-              <h3><a href="?page=21">Nom du projet en php</a></h3>
-              <p>PIOCHER DANS LA BASE DE DONN2ES</p>
-          </div>
-
-          <div class="col-md-4 portfolio-item">
-            <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
-            <h3><a href="?page=21">Nom du projet en php</a></h3>
-            <p>PIOCHER DANS LA BASE DE DONN2ES</p>            
-        </div>
-
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Product Name</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Product Name</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Product Name</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Nom du projet</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Project Name</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-4 portfolio-item">
-            <a href="#">
-                <img class="img-responsive" src="http://placehold.it/700x400" alt="">
-            </a>
-            <h3>
-                <a href="#">Project Name</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-4 portfolio-item">
-            <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
-            <h3><a href="#">Nom du projet</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-4 portfolio-item">
-            <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt=""></a>
-            <h3><a href="#">Nom du projet en php</a></h3>
-            <p>PIOCHER DANS LA BASE DE DONN2ES </p>
-        </div>
-    </div>
-    <!-- /.row -->
     <hr>
 
     <!-- Pagination -->
     <div class="row text-center">
         <div class="col-lg-12">
+          <hr>
+          <nav aria-label="Page navigation">
             <ul class="pagination">
-                <li><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
+              <?php if ($pagePrev >= 1): ?>
+                <li>
+                  <a href="?page=20&pageNum=1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="?page=20&pageNum="<?php $pagePrev ?> aria-label="Previous">
+                    <span aria-hidden="true">&laquo;&laquo;</span>
+                  </a>
+                </li>
+              <?php endif; ?>
+              <?php
+
+              for ($i=1; $i<=$nbrePages; $i++) {
+
+                  if ($pageNum == $i) {
+                      // Affichage de la page courante
+                      echo "<li class=\"active\"><a href=\"?page=20&pageNum=".$i."\">$i</a></li>";
+                  } else {
+                      // Affichage des autres pages
+                      echo "<li><a href=\"?page=20&pageNum=".$i."\">$i</a></li>";
+                  }
+              }
+              ?>
+
+              <?php if ($pageNext <= $nbrePages): ?>
+                <li>
+                  <a href="?page=20&pageNum="<?php $pageNext?> aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="?page=20&pageNum="<?php $nbrePages ?> aria-label="Next">
+                    <span aria-hidden="true">&raquo;&raquo;</span>
+                  </a>
+                </li>
+              <?php endif; ?>
             </ul>
+          </nav>
+          <br>
         </div>
     </div>
     <!-- /.row -->

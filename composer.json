@@ -1,0 +1,13 @@
+{
+    "name": "webforce/ecommerce",
+    "description": "Site ecommerce",
+    "authors": [
+        {
+            "name": "rorschach59",
+            "email": "remi.pouly@free.fr"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.6"
+    }
+}

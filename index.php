@@ -3,6 +3,9 @@
 session_name("E-commerce");
 session_start();
 
+// Inclure le fichier de Faker
+require_once 'vendor/autoload.php';
+
 // Inclure le fichier de config
 include_once 'app/config.php';
 
