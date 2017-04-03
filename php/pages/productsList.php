@@ -58,7 +58,7 @@ if ($pageNum > $nbrePages) {
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Titre de tous les articles
-                <small><br />La liste des articles</small>
+                <small><br />Liste des articles</small>
             </h1>
         </div>
     </div>
