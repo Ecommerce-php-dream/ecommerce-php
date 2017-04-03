@@ -5,6 +5,8 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 
     $id_user = $_GET['produit'];
     //getProds($id_user);
+    var_dump($_GET['produit']);
+    die();
 
     $query = $bdd->prepare("SELECT * FROM product  WHERE id=:idUser");
     $query->bindValue(":idUser", $id_user, PDO::PARAM_INT);
@@ -16,19 +18,14 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 
     echo "il y a un soucis";
 }
-$faker = Faker\Factory::create();
 
-    //var_dump($_POST);
+    $numberArticle = 1;
 
-    $numberArticle = null;
-
-    if( isset($_POST ) )
-    {
+      if( isset($_POST ) )
+      {
         $numberArticle =  $_POST['numberArticle'];
-
         $price = $result->price * $numberArticle ;
-
-    }
+      }
 ?>
 <div class="container">
     <div class="row">

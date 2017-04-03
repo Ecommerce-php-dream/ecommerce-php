@@ -44,10 +44,10 @@ if ($pageNum > $nbrePages) {
     exit;
 }
 
-// Requete de sélection des articles concerneés par la page courante
-// La requete retourne les articles 10 a 15 si le numero de la page est 3
-$query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
-$results = $query->fetchAll(PDO::FETCH_OBJ);
+  // Requete de sélection des articles concerneés par la page courante
+  // La requete retourne les articles 10 a 15 si le numero de la page est 3
+  $query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
+  $results = $query->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 
@@ -66,7 +66,7 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
 
     <!-- Projects Row -->
     <div class="row">
-      <?php foreach ($results as $key => $value): ?>
+      <?php foreach ($results as  $value): ?>
         <div class="col-md-4 portfolio-item">
             <a href="?page=21&produit=<?php echo $value->id; ?>">
                 <img class="img-responsive" src="<?php echo $value->image; ?>" alt="">
