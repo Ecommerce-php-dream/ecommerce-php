@@ -20,9 +20,9 @@ $faker = Faker\Factory::create();
 
     //var_dump($_POST);
 
-    $numberArticle = 1;
+    $numberArticle = null;
 
-    if(isset($_POST ) )
+    if( isset($_POST ) )
     {
         $numberArticle =  $_POST['numberArticle'];
 
@@ -69,7 +69,7 @@ $faker = Faker\Factory::create();
 
                                 <?php if ( $result->quantity > 1) {
                                     echo "<p class='text-success'>Le prix de votre commande s'eleve a ".$price." €</p>";
-                                } else {
+                                    } else {
 
                                     echo "<p class='text-error'>Désolé nous avon plus d'article disponible</p>";
                                     } ?>
