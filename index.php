@@ -18,16 +18,17 @@ include_once 'app/pages.php';
 // Inclure le fichier de fonctions pour les users
 include_once 'php/model/users.php';
 
-// -- Base de données
-// --
+// Inclure le fichier de fonctions pour les produits
+include_once 'php/model/products.php';
 
-// Connexion à la base de données
-// try {
-//     $bdd = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $pass);
-// }
-// catch(Exception $e) {
-//     die('Erreur : ' . $e->getMessage());
-// }
+
+//Connexion à la base de données
+try {
+    $bdd = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $pass);
+}
+catch(Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 
 // -- Inclure les pages communes
 // --

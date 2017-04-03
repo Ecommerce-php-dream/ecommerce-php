@@ -6,7 +6,7 @@ function setUserSession($userData) {
     $_SESSION['user'] = $userData;
 
     // redirige vers la page streamer
-    header("location: ?page=20");
+    header("location: ?page=1");
     exit;
 }
 

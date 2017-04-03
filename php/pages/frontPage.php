@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 <?php include_once 'php/common/header.php';
 
 
 ?>
+=======
+>>>>>>> fa8747baedce2d235719fd4fbce840ebbb821a8c
 <!-- Page Content -->
 <div class="container">
 
@@ -176,4 +179,3 @@
 
 </div>
 <!-- /.container -->
-<?php include_once 'php/common/footer.php'; ?>

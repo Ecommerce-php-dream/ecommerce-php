@@ -1,25 +1,33 @@
 <!-- Page Content -->
 <?php
 
-$host = "127.0.0.1";
-$user = "root";
-$pass = "";
-$database = "e_com";
+if (isset($_GET['uid']) && !empty($_GET['uid']) ){
 
-try {
-  $bdd = new PDO("mysql:host=$host;dbname=$database;charset=utf8",$user,$pass);
+    $id_user = $_GET['uid'];
+    //getProds($id_user);
 
-} catch (Exception $e) {
-  var_dump($e);
-  die('Erreur :' . $e->getMessage());
+    $query = $bdd->prepare("SELECT * FROM product  WHERE id=:idUser");
+    $query->bindValue(":idUser", $id_user, PDO::PARAM_INT);
+    $query->execute();
+    $result = $query->fetch(PDO::FETCH_OBJ);
+    $query->closeCursor();
+
+}else{
+
+    echo "il y a un soucis";
 }
 
+    //var_dump($_POST);
 
-  $query   = $bdd->query('SELECT * FROM product');
-  $product = $query->fetch();
+    $numberArticle = 1;
 
-  //var_dump($product);
-  echo "tableau rempli";
+    if(isset($_POST ) )
+    {
+        $numberArticle =  $_POST['numberArticle'];
+
+        $price = $result->price * $numberArticle ;
+        
+    }
 ?>
 <div class="container">
     <div class="row">
@@ -33,18 +41,40 @@ try {
         </div>
             <div class="col-md-9">
                 <div class="thumbnail">
-                  <?php foreach( $product as $key => $value): ?>
-
-                    <img class="img-responsive" src="<?php echo $product->image ; ?>" alt="">
+                  
+                    <img class="img-responsive" src="<?php echo $result->image; ?>" alt="">
                     <div class="caption-full">
 
-                        <h4 class="pull-right">$<?php echo $product->price ; ?></h4>
-                        <h4><a href="#"><?php echo $product->name ; ?></a></h4>
+                        <h4 class="pull-right">$ <?php echo $result->price ; ?></h4>
+                        <h4><strong><?php echo $result->name ?></strong></h4>
 
-                        <p><?php echo $product->description ; ?></p>
+                        <p><?php echo $result->description ; ?></p>
                     </div>
 
-                  <?php endforeach; ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>Quantité diponible :<?php echo $result->quantity ;?></p>
+                                <div class="form">
+                                <p>combien d'articles souhaitez vous ?</p>
+                                <form action="" method="POST">
+                                        <select name="numberArticle" id="numbArt">
+                                        <?php for($i = 1; $i <= $result->quantity; $i++){ ?> 
+                                           
+                                        <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option>                                   
+                                        <?php } ?>
+                                        </select>
+                                        <input type="submit" value="Valider" class="btn btn-warning">
+                                </form>
+                                <?php if ( $result->quantity > 1) {
+                                    echo "<p class='text-success'>Le prix de votre commande s'eleve a ".$price." €</p>";
+                                } else {
+
+                                    echo "<p class='text-error'>désolé nous avon plus d'article disponible</p>";
+                                    } ?>
+                                
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="ratings">
                         <p class="pull-right">3 reviews</p>

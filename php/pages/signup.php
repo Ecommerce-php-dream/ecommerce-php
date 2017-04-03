@@ -3,6 +3,7 @@
 $login = null;
 $email = null;
 $password = null;
+$role = null;
 
 // Vérifie l'envoi du formulaire en POST
 if (!empty($_POST)) {
@@ -11,16 +12,49 @@ if (!empty($_POST)) {
   $login = $_POST['login'];
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $role = 'customer';
+
+  // Cryptage du mot de passe
+  $crypt_password = password_hash($password, PASSWORD_DEFAULT);
+
+  // Création du tableau d'erreur
+  $error = [];
+
+  // Contrôle de l'adresse email
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          array_push($error, array(
+              "field" => "email",
+              "message" => "Vous devez saisir une adresse email valide."
+          ));
+  }
+
+  // Enregistrement de l'utilisateur dans la base de données
+  if (empty($error)) {
+      $user_id = setUser($login, $email, $crypt_password, $role);
+
+      // On log l'utilisateur et on le redirige vers sa page profil
+      if ($user_id > 0) {
+
+          // Log l'utilisateur
+          setUserSession(array(
+              "id" => $user_id,
+              "login" => $login,
+              "email" => $email,
+              "role" => $role
+          ));
+      }
+
+      // Si l'enregistrement à échoué on affiche un message d'erreur
+      else {
+          setFlashbag("L'enregistrement en BD à échoué");
+      }
+  }
 }
 
-var_dump($_POST);
-
-// Création du tableau d'erreur
-$error = [];
-
-
-
-
+$flashbag = getFlashbag();
+if (strlen($flashbag) > 0) {
+    echo "<div class=\"alert alert-danger\">$flashbag</div>";
+}
 
 ?>
 

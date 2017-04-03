@@ -1,6 +1,7 @@
 <?php
 $_ROUTES = array(
     0 => ['Accueil',                    'php/pages/frontPage.php'],
+    1 => ['Profil',                    'php/pages/Profile.php'],
     2 => ['Contact',                    'php/pages/contact.php'],
 
     10 => ['Inscription',               'php/pages/signup.php'],
@@ -15,3 +16,4 @@ $_ROUTES = array(
 
     404 => ['Not Found',                'php/pages/404.php'],
 );
+ 
