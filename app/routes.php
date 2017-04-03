@@ -5,11 +5,14 @@ $_ROUTES = array(
     2 => ['Contact',                    'php/pages/contact.php'],
     3 => ['Deconnexion',                    'php/pages/logout.php'],
 
+
     10 => ['Inscription',               'php/pages/signup.php'],
     11 => ['Connexion',                 'php/pages/signin.php'],
 
     20 => ['Liste de produits',         'php/pages/productsList.php'],
     21 => ['Informations produit',      'php/pages/productInfos.php'],
+    25 => ['why',                          'php/pages/why.php'],
+
 
     99 => ['Recherche',                 'php/pages/search.php'],
 

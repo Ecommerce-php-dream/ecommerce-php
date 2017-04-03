@@ -4,21 +4,29 @@
 
   $faker = Faker\Factory::create();
 
-  $query = $bdd->query("SELECT id, name, image,price, description FROM product");
+  $query = $bdd->query("SELECT * FROM product");
   $product = $query->fetchAll();
 
 ?>
 <!-- Page Content -->
 <div class="container">
+    <div class="jumbotron">
+        <div class="row">
+
+            <img class="col-lg-6" src="https://www.industrie-techno.com/mediatheque/9/6/3/000011369_imageArticlePrincipaleLarge.jpg" alt="">
+            <h2 class="col-lg-6">Presentation vehicule professionel</h2>
+
+        </div>
+    </div>
 
     <div class="row">
-
-        <div class="col-md-3">
-            <p class="lead">Shop Name</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+        <div class="col-md-3 ">
+            <p class="lead">Categories de voiture</p>
+            <div class="list-group ">
+                <a href="?page=22" class="list-group-item ">Ancienne voiture</a>
+                <a href="?page=22" class="list-group-item">Americaine</a>
+                <a href="?page=22" class="list-group-item">Sportive</a>
+                <a href="?page=22" class="list-group-item">Why ?</a>
             </div>
         </div>
 
@@ -54,18 +62,19 @@
             </div>
 
             <div class="row">
+              <?php  foreach ($product as $prod) {  ?>
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
-                      <?php  foreach ($product as $prod) {  ?>
-                        <img src="<?php echo $prod['image'] ; ?>" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$<?php echo $prod['price'] ;?></h4>
-                            <h4><a href="?page=20&id=<?php echo $prod['id']; ?>"></a>
-                            </h4>
-                            <p><?php echo $prod['description'] ; ?></p>
-                        </div>
+                          <img src="<?php echo $prod['image'] ; ?>" alt="">
+                          <div class="caption">
+                              <h4 class="pull-right">$<?php echo $prod['price'] ;?></h4>
+                              <h4><a href="?page=21&id=<?php echo $prod['id']; ?>"></a></h4>
+
+                              <p><?php echo $prod['description'] ; ?></p>
+
+                          </div>
+
                         <div class="ratings">
-                        <?php } ?>
                             <p class="pull-right">15 reviews</p>
                             <p>
                                 <span class="glyphicon glyphicon-star"></span>
@@ -75,8 +84,10 @@
                                 <span class="glyphicon glyphicon-star"></span>
                             </p>
                         </div>
+
                     </div>
                 </div>
+                <?php } ?>
 
 
 

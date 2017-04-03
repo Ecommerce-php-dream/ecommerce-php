@@ -5,8 +5,8 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 
     $id_user = $_GET['produit'];
     //getProds($id_user);
-    var_dump($_GET['produit']);
-    die();
+    //var_dump($_GET['produit']);
+    //die();
 
     $query = $bdd->prepare("SELECT * FROM product  WHERE id=:idUser");
     $query->bindValue(":idUser", $id_user, PDO::PARAM_INT);
@@ -20,8 +20,9 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 }
 
     $numberArticle = 1;
+    $price = $result->price * $numberArticle;
 
-      if( isset($_POST ) )
+      if( !empty($_POST) )
       {
         $numberArticle =  $_POST['numberArticle'];
         $price = $result->price * $numberArticle ;
