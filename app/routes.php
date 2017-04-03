@@ -3,6 +3,7 @@ $_ROUTES = array(
     0 => ['Accueil',                    'php/pages/frontPage.php'],
     1 => ['Profil',                    'php/pages/Profile.php'],
     2 => ['Contact',                    'php/pages/contact.php'],
+    3 => ['Deconnection',                    'php/pages/logout.php'],
 
     10 => ['Inscription',               'php/pages/signup.php'],
     11 => ['Connexion',                 'php/pages/signin.php'],

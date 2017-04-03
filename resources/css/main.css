@@ -1,0 +1,19 @@
+/**************************
+        prépa css
+**************************/
+.no_marge{
+  margin: 0px 0px 0px 0px;
+}
+
+
+/***************************
+      HEADER.PHP
+**************************/
+.white_wrote{
+  color: white;
+
+}
+
+.btn_nav_pad{
+  padding: 14px;
+}

@@ -9,6 +9,15 @@
       <title>Page d'accueil Ecommerce</title>
       <link href="resources/css/bootstrap.min.css" rel="stylesheet">
       <link href="resources/css/shop-homepage.css" rel="stylesheet">
+      <link rel="stylesheet" href="resources/css/main.css">
+      <link rel="stylesheet" href="resources/css/font-awesome.css">
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
   </head>
 
   <body>
@@ -28,12 +37,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                   <?php if (isLogged()): ?>
-                  <li>Bonjour <?php echo $_SESSION['user']['login'];?> </li>
+                  <li class="white_wrote btn_nav_pad">Bonjour <?php echo $_SESSION['user']['login'];?> </li>
+
+                  <li class="white_wrote "><a href="?page=3">Déconnection</a></li>
                   <?php else: ?>
-                   <li><a href="#">Connexion</a></li>
-                   </li>
+                   <li><a href="?page=11">Connexion</a></li>
+
                    <li>
                        <a href="?page=10">Inscription</a>
                    </li>
