@@ -1,12 +1,6 @@
 {
-    "name": "webforce/ecommerce",
-    "description": "Site ecommerce",
-    "authors": [
-        {
-            "name": "rorschach59",
-            "email": "remi.pouly@free.fr"
-        }
-    ],
+
+    "name": "etudiant/ecommerce-php",
     "require": {
         "fzaninotto/faker": "^1.6"
     }

@@ -49,7 +49,6 @@ if ($pageNum > $nbrePages) {
 $query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
 $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-
 ?>
 
 <!-- Page Content -->
@@ -78,6 +77,7 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
             <p><?php echo $value->description; ?></p>
         </div>
       <?php endforeach; ?>
+
 
     <hr>
 

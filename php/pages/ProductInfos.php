@@ -16,6 +16,7 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 
     echo "il y a un soucis";
 }
+$faker = Faker\Factory::create();
 
     //var_dump($_POST);
 
@@ -65,11 +66,12 @@ if (isset($_GET['produit']) && !empty($_GET['produit']) ){
                                         </select>
                                         <input type="submit" value="Valider" class="btn btn-warning">
                                 </form>
+
                                 <?php if ( $result->quantity > 1) {
                                     echo "<p class='text-success'>Le prix de votre commande s'eleve a ".$price." €</p>";
                                 } else {
 
-                                    echo "<p class='text-error'>désolé nous avon plus d'article disponible</p>";
+                                    echo "<p class='text-error'>Désolé nous avon plus d'article disponible</p>";
                                     } ?>
 
                             </div>

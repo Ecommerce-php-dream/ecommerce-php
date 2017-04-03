@@ -2,6 +2,8 @@
 
 session_name("E-commerce");
 session_start();
+//Inclure le fichier composer
+require 'vendor/autoload.php';
 
 // Inclure le fichier de Faker
 require_once 'vendor/autoload.php';

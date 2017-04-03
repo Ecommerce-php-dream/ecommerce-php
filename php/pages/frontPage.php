@@ -1,3 +1,8 @@
+<?php include_once 'php/common/header.php';
+
+$faker = Faker\Factory::create();
+
+?>
 <!-- Page Content -->
 <div class="container">
 
@@ -13,9 +18,7 @@
         </div>
 
         <div class="col-md-9">
-
             <div class="row carousel-holder">
-
                 <div class="col-md-12">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -25,13 +28,13 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                <img class="slide-image" src="<?php echo $faker->imageUrl ; ?>" alt="">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                <img class="slide-image" src="<?php echo $faker->imageUrl ; ?>" alt="">
                             </div>
                             <div class="item">
-                                <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                <img class="slide-image" src="<?php echo $faker->imageUrl ; ?>" alt="">
                             </div>
                         </div>
                         <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
