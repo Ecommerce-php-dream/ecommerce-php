@@ -10,7 +10,7 @@ function getProduct() {
    global $bdd;
 
    // Préparation de la requête
-   $query = $bdd->query("SELECT id FROM product");
+   $query = $bdd->query("SELECT id, name, image FROM product");
 
    // Executiuon de la requete
    $query->execute();

@@ -58,9 +58,8 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
     <!-- Page Header -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Titre de tous les articles
-                <small><br />Liste des articles</small>
-            </h1>
+            <h1 class="text-center">Toutes nos voitures</h1>
+            <hr>
         </div>
     </div>
     <!-- /.row -->
