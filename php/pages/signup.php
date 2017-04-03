@@ -9,9 +9,9 @@ $role = null;
 if (!empty($_POST)) {
 
   // Récupère les données de $_POST
-  $login = $_POST['login'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+  $login = formatString($_POST['login']);
+  $email = formatString($_POST['email']);
+  $password = formatString($_POST['password']);
   $role = 'customer';
 
   // Cryptage du mot de passe
@@ -19,6 +19,14 @@ if (!empty($_POST)) {
 
   // Création du tableau d'erreur
   $error = [];
+
+  // Contrôle du nom d'utilisateur
+  if (strlen($login) < 2) {
+    array_push($error, array(
+      "field" => "login",
+      "message" => "Votre login doit contenir au moins 2 caractères"
+    ));
+  }
 
   // Contrôle de l'adresse email
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -66,11 +74,13 @@ if (strlen($flashbag) > 0) {
         <div class="form-group">
           <label for="login">Votre pseudo :</label>
           <input id="login" name="login" type="text" class="form-control" placeholder="Pseudo">
+          <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "login")."</span>"; ?>
         </div>
 
         <div class="form-group">
           <label for="email">Votre adresse email :</label>
           <input id="email" name="email" type="text" class="form-control" placeholder="Email">
+          <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "email")."</span>"; ?>
         </div>
 
         <div class="form-group">

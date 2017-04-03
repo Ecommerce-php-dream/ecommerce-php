@@ -10,13 +10,15 @@ function getProduct() {
    global $bdd;
 
    // Préparation de la requête
-   $query = $bdd->query("SELECT id, name, image, description FROM product");
+   $query = $bdd->query("SELECT id FROM product");
 
-   // Retourne un tableau avec le résultat de ma requête
-   $product = $query->fetchAll();
+   // Executiuon de la requete
+   $query->execute();
 
-   return $product ;
+   // Execute et retourne le resultat de la requête
+   return $query->fetchAll(PDO::FETCH_OBJ);
 }
+
 function getProds($id_user){
 
 	global $bdd;

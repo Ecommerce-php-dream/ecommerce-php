@@ -69,11 +69,11 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
     <div class="row">
       <?php foreach ($results as $key => $value): ?>
         <div class="col-md-4 portfolio-item">
-            <a href="#">
+            <a href="?page=21&produit=<?php echo $value->id; ?>">
                 <img class="img-responsive" src="<?php echo $value->image; ?>" alt="">
             </a>
             <h3>
-                <a href="#"><?php echo $value->name; ?></a>
+                <a href="?page=21&produit=<?php echo $value->id; ?>"><?php echo $value->name; ?></a>
             </h3>
             <p><?php echo $value->description; ?></p>
         </div>
@@ -94,13 +94,13 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
                   </a>
                 </li>
                 <li>
-                  <a href="?page=20&pageNum="<?php $pagePrev ?> aria-label="Previous">
-                    <span aria-hidden="true">&laquo;&laquo;</span>
+                  <?php echo "<a href=\"?page=20&pageNum=".$pagePrev."\" aria-label=\"Previous\">"; ?> <!-- <a href="?page=20&pageNum="<?php $pagePrev ?> aria-label="Previous"> -->
+                    <span aria-hidden="true">&laquo;</span>
                   </a>
                 </li>
               <?php endif; ?>
-              <?php
 
+              <?php
               for ($i=1; $i<=$nbrePages; $i++) {
 
                   if ($pageNum == $i) {
@@ -115,12 +115,12 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
 
               <?php if ($pageNext <= $nbrePages): ?>
                 <li>
-                  <a href="?page=20&pageNum="<?php $pageNext?> aria-label="Next">
+                  <?php echo "<a href=\"?page=20&pageNum=".$pageNext."\" aria-label=\"Next\">"; ?><!-- <a href="?page=20&pageNum="<?php $pageNext ?> aria-label="Next"> -->
                     <span aria-hidden="true">&raquo;</span>
                   </a>
                 </li>
                 <li>
-                  <a href="?page=20&pageNum="<?php $nbrePages ?> aria-label="Next">
+                  <?php echo "<a href=\"?page=20&pageNum=".$nbrePages."\" aria-label=\"Next\">"; ?><!-- <a href="?page=20&pageNum="<?php $nbrePages ?> aria-label="Next"> -->
                     <span aria-hidden="true">&raquo;&raquo;</span>
                   </a>
                 </li>

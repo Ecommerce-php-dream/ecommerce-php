@@ -1,9 +1,9 @@
 <!-- Page Content -->
 <?php
 
-if (isset($_GET['uid']) && !empty($_GET['uid']) ){
+if (isset($_GET['produit']) && !empty($_GET['produit']) ){
 
-    $id_user = $_GET['uid'];
+    $id_user = $_GET['produit'];
     //getProds($id_user);
 
     $query = $bdd->prepare("SELECT * FROM product  WHERE id=:idUser");
@@ -26,7 +26,7 @@ if (isset($_GET['uid']) && !empty($_GET['uid']) ){
         $numberArticle =  $_POST['numberArticle'];
 
         $price = $result->price * $numberArticle ;
-        
+
     }
 ?>
 <div class="container">
@@ -41,7 +41,7 @@ if (isset($_GET['uid']) && !empty($_GET['uid']) ){
         </div>
             <div class="col-md-9">
                 <div class="thumbnail">
-                  
+
                     <img class="img-responsive" src="<?php echo $result->image; ?>" alt="">
                     <div class="caption-full">
 
@@ -58,9 +58,9 @@ if (isset($_GET['uid']) && !empty($_GET['uid']) ){
                                 <p>combien d'articles souhaitez vous ?</p>
                                 <form action="" method="POST">
                                         <select name="numberArticle" id="numbArt">
-                                        <?php for($i = 1; $i <= $result->quantity; $i++){ ?> 
-                                           
-                                        <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option>                                   
+                                        <?php for($i = 1; $i <= $result->quantity; $i++){ ?>
+
+                                        <option value="<?php echo $i ; ?>"><?php echo $i ; ?></option>
                                         <?php } ?>
                                         </select>
                                         <input type="submit" value="Valider" class="btn btn-warning">
@@ -71,7 +71,7 @@ if (isset($_GET['uid']) && !empty($_GET['uid']) ){
 
                                     echo "<p class='text-error'>désolé nous avon plus d'article disponible</p>";
                                     } ?>
-                                
+
                             </div>
                         </div>
                     </div>
