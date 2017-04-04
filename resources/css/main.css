@@ -1,19 +1,122 @@
+@charset "UTF-8";
 /**************************
         prépa css
 **************************/
-.no_marge{
+.no_marge {
   margin: 0px 0px 0px 0px;
 }
-
 
 /***************************
       HEADER.PHP
 **************************/
-.white_wrote{
+.white_wrote {
   color: white;
-
 }
 
-.btn_nav_pad{
+.btn_nav_pad {
   padding: 14px;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav .title {
+  font-size: 2em;
+}
+
+nav .navbar-header a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+nav a {
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  font-size: 1.6em;
+}
+
+nav a:hover {
+  border-radius: 5px;
+}
+
+#carousel-frontPage {
+  margin-top: -4%;
+  z-index: -1000;
+}
+
+#carousel-frontPage .carousel-inner img {
+  width: 100%;
+}
+
+.selection-frontPage {
+  padding-top: 2%;
+}
+
+.dropdown {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropdown dd {
+  position: relative;
+}
+
+.dropdown a:visited {
+  color: #000000;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.6em;
+}
+
+.dropdown dt a {
+  background-color: rgba(180, 187, 191, 0.5);
+  display: block;
+  min-height: 25px;
+  line-height: 24px;
+  overflow: hidden;
+  border: 0;
+  padding: 2%;
+}
+
+.dropdown dd ul {
+  background-color: rgba(180, 187, 191, 0.5);
+  border: 0;
+  display: none;
+  left: 0px;
+  padding: 2px 15px 2px 5px;
+  position: absolute;
+  top: 2px;
+  list-style: none;
+  height: 100px;
+  overflow: auto;
+  width: 100%;
+}
+
+.dropdown dd ul li a {
+  padding: 5px;
+  display: block;
+}
+
+.dropdown dd ul li a:hover {
+  background-color: #fff;
+}
+
+.dropdown span.value {
+  display: none;
+}
+
+.multiSel span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 3px 2px 0;
+}
+
+.btn {
+  padding: 5px 12px;
+  color: white;
+  background-color: #de4218;
+}
+
+footer {
+  padding-top: 5%;
 }

@@ -2,8 +2,6 @@
 
 session_name("E-commerce");
 session_start();
-//Inclure le fichier composer
-require 'vendor/autoload.php';
 
 // Inclure le fichier de Faker
 require_once 'vendor/autoload.php';
@@ -27,7 +25,8 @@ include_once 'php/model/users.php';
 include_once 'php/model/products.php';
 
 
-//Connexion à la base de données
+// -- Connexion à la base de données
+// --
 try {
     $bdd = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $pass);
 }

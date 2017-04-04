@@ -28,12 +28,27 @@ if (!empty($_POST)) {
     ));
   }
 
+  if (strlen($password) < 2) {
+    array_push($error, array(
+      "field" => "password",
+      "message" => "Votre mot de passe doit contenir au moins 2 caractères"
+    ));
+  }
+
   // Contrôle de l'adresse email
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           array_push($error, array(
               "field" => "email",
               "message" => "Vous devez saisir une adresse email valide."
           ));
+  }
+
+  // Contrôle du captcha
+  if($_POST['captcha'] != $_SESSION['captcha']) {
+    array_push($error, array(
+        "field" => "captcha",
+        "message" => "Le captcha n'est pas correct."
+    ));
   }
 
   // Enregistrement de l'utilisateur dans la base de données
@@ -86,6 +101,13 @@ if (strlen($flashbag) > 0) {
         <div class="form-group">
           <label for="password">Votre mot de passe :</label>
           <input id="password" name="password" type="password" class="form-control" placeholder="Mot de passe">
+          <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "password")."</span>"; ?>
+        </div>
+
+        <div class="form-group">
+          <label for="captcha">Recopiez le mot : <img src="php/model/captcha.php" alt="Captcha" /></label>
+          <input id="captcha" name="captcha" type="text" class="form-control" />
+          <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "captcha")."</span>"; ?>
         </div>
 
         <button class="btn btn-primary center-block" type="submit" name="button">S'inscrire</button>

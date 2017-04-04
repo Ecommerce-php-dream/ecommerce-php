@@ -10,7 +10,7 @@ function getProduct() {
    global $bdd;
 
    // Préparation de la requête
-   $query = $bdd->query("SELECT id, name, image FROM product");
+   $query = $bdd->query("SELECT id, name, image, year, price FROM product ORDER BY name");
 
    // Executiuon de la requete
    $query->execute();
@@ -19,20 +19,49 @@ function getProduct() {
    return $query->fetchAll(PDO::FETCH_OBJ);
 }
 
-function getProds($id_user){
+function getProductName() {
 
-	global $bdd;
-    // Préparation de la requete
-    $query = $bdd->prepare("SELECT * FROM product  WHERE id=:idUser");
+   // On définit $bdd comme étant une variable globale
+   global $bdd;
 
-    $query->bindValue(":idUser", $id_user, PDO::PARAM_INT);
-    $query->execute();
+   // Préparation de la requête
+   $query = $bdd->query("SELECT name FROM product ORDER BY name");
 
-    $result = $query->fetch(PDO::FETCH_OBJ);
-    $query->closeCursor();
+   // Executiuon de la requete
+   $query->execute();
 
-    //return $result;
+   // Execute et retourne le resultat de la requête
+   return $query->fetchAll(PDO::FETCH_OBJ);
 }
 
+function getProductYear() {
+
+   // On définit $bdd comme étant une variable globale
+   global $bdd;
+
+   // Préparation de la requête
+   $query = $bdd->query("SELECT year FROM product ORDER BY year");
+
+   // Executiuon de la requete
+   $query->execute();
+
+   // Execute et retourne le resultat de la requête
+   return $query->fetchAll(PDO::FETCH_OBJ);
+}
+
+function getProductPrice() {
+
+   // On définit $bdd comme étant une variable globale
+   global $bdd;
+
+   // Préparation de la requête
+   $query = $bdd->query("SELECT price FROM product ORDER BY price");
+
+   // Executiuon de la requete
+   $query->execute();
+
+   // Execute et retourne le resultat de la requête
+   return $query->fetchAll(PDO::FETCH_OBJ);
+}
 
 ?>
