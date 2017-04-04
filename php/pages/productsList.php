@@ -1,5 +1,10 @@
 <?php
 
+    /********************/
+    /*   PAGINATION    */
+    /*******************/
+
+
 // On récupére le numéro de la page depuis l'url
 // Si le paramètre "pageNum" n'existe pas, on définit que la page vaut 1
 $pageNum = isset($_GET['pageNum']) ? $_GET['pageNum'] : 1;
@@ -46,10 +51,37 @@ if ($pageNum > $nbrePages) {
 
   // Requete de sélection des articles concerneés par la page courante
   // La requete retourne les articles 10 a 15 si le numero de la page est 3
+  $mark = $_POST['mark'];
+
   $query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
   $results = $query->fetchAll(PDO::FETCH_OBJ);
 
+
 ?>
+
+<?php
+
+if(!empty($_POST)) {
+  foreach ($_POST['mark'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['year'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['price'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['category'] as $value) {
+  echo $value.'<br>';
+}
+
+  $mark = $_POST['mark'];
+  var_dump($_POST['mark']);
+}
+
+?>
+
+
 
 <!-- Page Content -->
 <div class="container">

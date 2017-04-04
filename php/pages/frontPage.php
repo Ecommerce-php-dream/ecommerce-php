@@ -42,7 +42,7 @@
                 <ul>
                   <?php foreach (getProductName() as $product): ?>
                     <li>
-                    <input type="checkbox" value="<?php echo $product->name; ?>" /><?php echo $product->name; ?></li>
+                    <input type="checkbox" name="mark[]" value="<?php echo $product->name; ?>" /><?php echo $product->name; ?></li>
                   <?php endforeach; ?>
                   </li>
                 </ul>
@@ -63,7 +63,7 @@
                 <ul>
                   <?php foreach (getProductYear() as $product): ?>
                     <li>
-                    <input type="checkbox" value="<?php echo $product->year; ?>" /><?php echo $product->year; ?></li>
+                    <input type="checkbox" name="year[]" value="<?php echo $product->year; ?>" /><?php echo $product->year; ?></li>
                   <?php endforeach; ?>
                   </li>
                 </ul>
@@ -84,7 +84,7 @@
                 <ul>
                   <?php foreach (getProductPrice() as $product): ?>
                     <li>
-                    <input type="checkbox" value="<?php echo $product->price; ?>" /><?php echo $product->price.'€'; ?></li>
+                    <input type="checkbox" name="price[]" value="<?php echo number_format($product->price,2,' ',','); ?>" /><?php echo number_format($product->price,2,',',' ').'€'; ?></li>
                   <?php endforeach; ?>
                   </li>
                 </ul>
@@ -105,7 +105,7 @@
                 <ul>
                   <?php foreach (getCategory() as $category): ?>
                     <li>
-                    <input type="checkbox" value="<?php echo $category->name; ?>" /><?php echo $category->name; ?></li>
+                    <input type="checkbox" name="category[]" value="<?php echo $category->name; ?>" /><?php echo $category->name; ?></li>
                   <?php endforeach; ?>
                   </li>
                 </ul>
@@ -118,3 +118,26 @@
     </div>
   </div>
 </div>
+
+<?php
+
+if(!empty($_POST)) {
+  foreach ($_POST['mark'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['year'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['price'] as $value) {
+  echo $value.'<br>';
+}
+  foreach ($_POST['category'] as $value) {
+  echo $value.'<br>';
+}
+
+  $mark = $_POST['mark'];
+  var_dump($_POST['mark']);
+}
+
+
+?>

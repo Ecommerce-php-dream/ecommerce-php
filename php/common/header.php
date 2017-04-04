@@ -54,7 +54,7 @@
                    <li>
                        <a href="?page=10">Inscription</a>
                    </li>
-                <?php endif; ?>s
+                <?php endif; ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
