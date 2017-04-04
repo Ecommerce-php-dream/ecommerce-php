@@ -27,7 +27,7 @@
 
 <div class="container">
   <div class="row selection-frontPage">
-    <div class="col-lg-12 col-lg-push-3">
+    <div class="col-lg-12 col-lg-push-2">
       <form class="" action="?page=20" method="post">
         <div class="col-lg-2">
           <dl class="dropdown">
@@ -85,6 +85,27 @@
                   <?php foreach (getProductPrice() as $product): ?>
                     <li>
                     <input type="checkbox" value="<?php echo $product->price; ?>" /><?php echo $product->price.'€'; ?></li>
+                  <?php endforeach; ?>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-lg-2">
+          <dl class="dropdown">
+            <dt>
+              <a class="text-center" href="#">
+                <span class="hida">Catégories</span>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </a>
+            </dt>
+            <dd>
+              <div class="mutliSelect">
+                <ul>
+                  <?php foreach (getCategory() as $category): ?>
+                    <li>
+                    <input type="checkbox" value="<?php echo $category->name; ?>" /><?php echo $category->name; ?></li>
                   <?php endforeach; ?>
                   </li>
                 </ul>
