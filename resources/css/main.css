@@ -1,9 +1,45 @@
 @charset "UTF-8";
+
+/* ==========================================================================
+                         chargement de FONT
+   ========================================================================== */
+@font-face{
+	font-family: 'introrustg';
+	src: url('../fonts/introrustg-base2line-webfont.eot');
+	src: url('../fonts/introrustg-base2line-webfont.eot') format('embedded-opentype'),
+	     url('../fonts/introrustg-base2line-webfont.woff') format('woff'),
+	     url('../fonts/introrustg-base2line-webfont.ttf') format('truetype'),
+	     url('../fonts/introrustg-base2line-webfont.svg') format('svg');
+}
+@font-face{
+	font-family: 'introscriptr';
+	src: url('../fonts/introscriptr-h2base-webfont.eot');
+	src: url('../fonts/introscriptr-h2base-webfont.eot') format('embedded-opentype'),
+	     url('../fonts/introscriptr-h2base-webfont.woff') format('woff'),
+	     url('../fonts/introscriptr-h2base-webfont.ttf') format('truetype'),
+	     url('../fonts/introscriptr-h2base-webfont.svg') format('svg');
+}
+@font-face{
+	font-family: 'Kreon-Bold';
+	src: url('../fonts/Kreon-Bold.ttf') format('truetype');}
+@font-face{
+font-family: 'Kreon-Light';
+src: url('../fonts/Kreon-Light.ttf') format('truetype');}
+@font-face{
+font-family: 'Kreon-Regular';
+src: url('../fonts/Kreon-Regular.ttf') format('truetype');}
+
+
 /**************************
         prépa css
 **************************/
 .no_marge {
   margin: 0px 0px 0px 0px;
+}
+
+mark {
+  background-color: black;
+  color: white;
 }
 
 /***************************
@@ -119,4 +155,50 @@ nav a:hover {
 
 footer {
   padding-top: 5%;
+
+/********************
+      Contact.php
+********************/
+/*taille et police des titres*/
+.Formulaire>p{
+ font-family: 'Kreon-Regular', Arial, sans-serif;
+}
+
+.Formulaire-droite>ul>li{
+ font-family: 'Kreon-Regular', Arial, sans-serif;
+}
+
+.Formulaire-droite>ul>li.h5{
+ font-size: 16px;
+}
+.h4{
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.petit{
+ font-size: 12px;
+}
+
+.Formulaire-droite{
+ padding-left: 50px;
+}
+.basdroite{
+ text-align: right;
+}
+.footer3{
+ background-color: #382320;
+ color: white;
+ padding: 50px 0 50px 0;
+}
+.list-inline>li{
+ font-size: 26px;
+}
+
+.basgauche>p{
+ padding-left: 50px;
+ font-size: 18px;
+}
+.basdroite>ul{
+ padding-right: 75px;
 }

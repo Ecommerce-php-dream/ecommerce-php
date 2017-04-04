@@ -3,9 +3,14 @@ $_ROUTES = array(
     0 => ['Accueil',                    'php/pages/frontPage.php'],
     1 => ['Profil',                     'php/pages/profile.php'],
     2 => ['Contact',                    'php/pages/contact.php'],
+<<<<<<< HEAD
     3 => ['Deconnexion',                'php/pages/logout.php'],
     4 => ['Changer le mot de passe',    'php/pages/changePassword.php'],
     5 => ['Changer l\'adresse email',    'php/pages/changeEmail.php'],
+=======
+    3 => ['Deconnexion',                    'php/pages/logout.php'],
+    6 => ['Mention legal',                    'php/pages/mentionlegal.php'],
+>>>>>>> Contact, mentions legales et header
 
     10 => ['Inscription',               'php/pages/signup.php'],
     11 => ['Connexion',                 'php/pages/signin.php'],

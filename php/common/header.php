@@ -39,7 +39,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <?php if (isLogged()): ?>
-                  <li class="white_wrote btn_nav_pad">Bonjour <?php echo $_SESSION['user']['login'];?> </li>
+                  <li class="white_wrote"><a href="?page=1">Bonjour <?php echo $_SESSION['user']['login'];?></a></li>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil <span class="caret"></span></a>
                       <ul class="dropdown-menu">
@@ -54,10 +54,7 @@
                    <li>
                        <a href="?page=10">Inscription</a>
                    </li>
-                   <li>
-                       <a href="#">Contact</a>
-                   </li>
-                <?php endif; ?>
+                <?php endif; ?>s
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -24,6 +24,9 @@ include_once 'php/model/users.php';
 // Inclure le fichier de fonctions pour les produits
 include_once 'php/model/products.php';
 
+// Inclure le fichier de fonctions pour les messages
+include_once 'php/model/message_box.php';
+
 
 // -- Connexion à la base de données
 // --
