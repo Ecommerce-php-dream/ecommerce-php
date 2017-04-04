@@ -11,10 +11,20 @@ $_ROUTES = array(
 
     20 => ['Liste de produits',         'php/pages/productsList.php'],
     21 => ['Informations produit',      'php/pages/productInfos.php'],
+<<<<<<< Updated upstream
     25 => ['why',                          'php/pages/why.php'],
 
 
     99 => ['Recherche',                 'php/pages/search.php'],
+=======
+
+    25 => ['why',                        'php/pages/why.php'],
+    26 => ['Sportive',                   'php/pages/sportive.php'],
+    27 => ['Americaine',                 'php/pages/americaine.php'],
+    28 => ['AncienneVoit',               'php/pages/ancienne.php'],
+
+    99 => ['Recherche',                 'php/pages/.php'],
+>>>>>>> Stashed changes
 
     404 => ['Not Found',                'php/pages/404.php'],
 );

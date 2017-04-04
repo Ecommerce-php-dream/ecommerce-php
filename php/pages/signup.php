@@ -60,6 +60,7 @@ if (!empty($_POST)) {
 }
 
 $flashbag = getFlashbag();
+
 if (strlen($flashbag) > 0) {
     echo "<div class=\"alert alert-danger\">$flashbag</div>";
 }

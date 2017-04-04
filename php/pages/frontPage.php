@@ -23,10 +23,10 @@
         <div class="col-md-3 ">
             <p class="lead">Categories de voiture</p>
             <div class="list-group ">
-                <a href="?page=22" class="list-group-item ">Ancienne voiture</a>
-                <a href="?page=22" class="list-group-item">Americaine</a>
-                <a href="?page=22" class="list-group-item">Sportive</a>
-                <a href="?page=22" class="list-group-item">Why ?</a>
+                <a href="?page=28" class="list-group-item ">Ancienne voiture</a>
+                <a href="?page=27" class="list-group-item">Americaine</a>
+                <a href="?page=26" class="list-group-item">Sportive</a>
+                <a href="?page=25" class="list-group-item">Why ?</a>
             </div>
         </div>
 
