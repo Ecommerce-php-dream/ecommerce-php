@@ -1,17 +1,15 @@
 <?php
 
-// On détecte l'envois du formulaire
+// On détecte l'envoi du formulaire
 if (!empty($_POST)) {
 
     // On récupère les champs
     $login     = $_POST['login'];
-    $password   = $_POST['password']; //AZERdfghj2132!!
-
-    // On crypte le mot de passe
-    // ...
+    $password   = $_POST['password'];
 
     // Création du tableau d'erreur
     $error = [];
+
     // On récupère les données de l'utilisateur dans la base de
     // données grace à sont adresse email
     $user = getUserBylogin($login);
@@ -23,7 +21,8 @@ if (!empty($_POST)) {
         setUserSession(array(
             "id" => $user->id,
             "login" => $user->login,
-            "email" => $email
+            "email" => $user->email,
+            "password" => $user->password
         ));
     } elseif ($user && $login === $user->login) {
     array_push($error, array(

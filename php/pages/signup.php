@@ -73,13 +73,13 @@ if (strlen($flashbag) > 0) {
       <form class="" action="" method="post">
         <div class="form-group">
           <label for="login">Votre pseudo :</label>
-          <input id="login" name="login" type="text" class="form-control" placeholder="Pseudo">
+          <input id="login" name="login" type="text" class="form-control" placeholder="Pseudo" value="<?php echo $login; ?>">
           <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "login")."</span>"; ?>
         </div>
 
         <div class="form-group">
           <label for="email">Votre adresse email :</label>
-          <input id="email" name="email" type="text" class="form-control" placeholder="Email">
+          <input id="email" name="email" type="text" class="form-control" placeholder="Email" value="<?php echo $email; ?>">
           <?php if (isset($error)) echo "<span class=\"text-danger\">".printError($error, "email")."</span>"; ?>
         </div>
 

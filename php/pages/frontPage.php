@@ -2,7 +2,7 @@
 
   include_once 'php/common/header.php';
 
-  $faker = Faker\Factory::create();
+  //$faker = Faker\Factory::create();
 
   $query = $bdd->query("SELECT * FROM product");
   $product = $query->fetchAll();
