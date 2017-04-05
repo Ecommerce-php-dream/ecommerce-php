@@ -51,12 +51,11 @@ if ($pageNum > $nbrePages) {
 
   // Requete de sélection des articles concerneés par la page courante
   // La requete retourne les articles 10 a 15 si le numero de la page est 3
-  $mark = $_POST['mark'];
-
-  $query = $bdd->query("SELECT id, name, description, image FROM product LIMIT $start,$nbreArticleParPage");
+  $mark = implode(" " , $_POST['mark']);
+  $query = $bdd->query("SELECT id, name, category, year, description, image, price, quantity FROM product WHERE name IN ('$mark') LIMIT $start,$nbreArticleParPage");
+  // WHERE name in '$mark'
   $results = $query->fetchAll(PDO::FETCH_OBJ);
-
-
+  //var_dump($mark);
 ?>
 
 <?php
@@ -78,6 +77,7 @@ if(!empty($_POST)) {
   $mark = $_POST['mark'];
   var_dump($_POST['mark']);
 }
+
 
 ?>
 
